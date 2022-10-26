@@ -1,0 +1,14 @@
+<div class="test-box">
+  <h1>{{ count$ | ngrxPush }}</h1>
+
+  <mat-form-field>
+    <input #input matInput placeholder="Multiply by" value="2" />
+  </mat-form-field>
+
+  <button class="full margin-bottom" mat-flat-button color="primary" (click)="multiply(input.value)">Multiply</button>
+
+  <div fxLayout="row" fxLayoutGap="16px">
+    <button class="full" mat-flat-button color="primary" (click)="increment()">Increment</button>
+    <button class="full" mat-flat-button color="primary" (click)="decrement()" [disabled]="countIsZero$ | ngrxPush">Decrement</button>
+  </div>
+</div>
