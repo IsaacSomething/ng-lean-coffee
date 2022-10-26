@@ -4,34 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarModule } from './components/toolbar';
-const moduleImports = [
-  ToolbarModule,
-  AppRoutingModule,
-  BrowserAnimationsModule,
-];
+const moduleImports = [ToolbarModule, AppRoutingModule, BrowserAnimationsModule];
 
-import { StoreModule } from '@ngrx/store';
 import { PushModule } from '@ngrx/component';
-import { reducers } from './store';
-const ngrxModules = [StoreModule.forRoot(reducers, {}), PushModule];
+import { modulesConfig } from '@coffee/store/modules.config';
+const ngrxImports = [PushModule, ...modulesConfig];
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 const materialImports = [MatToolbarModule];
 
 import { AppComponent } from './app.component';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    ...moduleImports,
-    ...materialImports,
-    ...ngrxModules,
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-  ],
+  imports: [BrowserModule, ...moduleImports, ...materialImports, ...ngrxImports, StoreRouterConnectingModule.forRoot()],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

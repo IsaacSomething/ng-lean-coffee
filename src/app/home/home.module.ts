@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FirstStepsModule } from '@lc/components/first-steps';
+import { FirstStepsModule } from '@coffee/components/first-steps';
 const moduleImports = [HomeRoutingModule, FlexLayoutModule, FirstStepsModule];
 
 import { MatButtonModule } from '@angular/material/button';

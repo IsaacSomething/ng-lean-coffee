@@ -23,7 +23,7 @@
       "dom"
     ],
     "paths": {
-      "@lc/*": [
+      "@coffee/*": [
         "./src/app/*"
       ],
     }
