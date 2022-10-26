@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { PushModule } from '@ngrx/component';
-const moduleImports = [HomeRoutingModule, FlexLayoutModule, PushModule];
+import { FirstStepsModule } from '@lc/components/first-steps';
+const moduleImports = [HomeRoutingModule, FlexLayoutModule, FirstStepsModule];
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';

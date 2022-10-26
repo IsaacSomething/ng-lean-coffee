@@ -5,8 +5,8 @@ body {
 
 body {
   margin: 0;
-  font-family: "Fira Code", monospace;
-  color: #333;
+  font-family: 'Fira Code', monospace;
+  color: var(--text-color);
 }
 
 app-root {
@@ -21,6 +21,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }

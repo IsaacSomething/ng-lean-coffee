@@ -1,18 +1,6 @@
 <div fxLayoutAlign="center center">
   <div fxLayout="column" fxLayoutGap="16px" class="container">
-    <div class="test-box">
-      <h1>{{ count$ | ngrxPush }}</h1>
-
-      <mat-form-field>
-        <input #input matInput placeholder="label" value="value" />
-        <button class="full" mat-flat-button color="primary" (click)="multiply(input.value)">Multiply</button>
-      </mat-form-field>
-
-      <div fxLayout="row" fxLayoutGap="16px">
-        <button class="full" mat-flat-button color="primary" (click)="increment()">Increment</button>
-        <button class="full" mat-flat-button color="primary" (click)="decrement()" [disabled]="countIsZero$ | ngrxPush">Decrement</button>
-      </div>
-    </div>
+    <app-first-steps></app-first-steps>
 
     <div fxLayout="row" fxLayoutGap="16px" class="container">
       <button mat-flat-button fxFlex="calc(50% - 16px)" color="primary" routerLink="/setup" class="large">Start</button>
