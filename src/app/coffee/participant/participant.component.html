@@ -1,0 +1,19 @@
+<mat-progress-bar mode="determinate" [value]="countdown$ | async">
+</mat-progress-bar>
+
+<div fxLayoutAlign="center center">
+  <div fxLayout="column">
+    <div *ngIf="started; else loading">
+      <button mat-flat-button color="primary" (click)="add()">
+        Add discussion point
+      </button>
+    </div>
+
+    <ng-template #loading>
+      <mat-spinner></mat-spinner>
+      <p>Waiting for lean coffee to start</p>
+
+      <app-participant-list></app-participant-list>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div fxLayoutAlign="center center">
+  <div fxLayout="column">
+    <small> Click/tap to share code </small>
+    <div class="code-container">
+      <small> {{ copied ? "Copied!" : "" }} </small>
+      <h1 [cdkCopyToClipboard]="code" matRipple (click)="copy()">{{ code }}</h1>
+    </div>
+
+    <div fxLayout="row" class="margin-bottom button-container">
+      <button
+        mat-button
+        [class.mat-flat-button]="!active"
+        [class.mat-stroked-button]="active"
+        color="primary"
+        class="full"
+        (click)="select()"
+      >
+        Company
+      </button>
+      <button
+        mat-button
+        [class.mat-flat-button]="active"
+        [class.mat-stroked-button]="!active"
+        color="primary"
+        class="full"
+        (click)="select()"
+      >
+        Team
+      </button>
+    </div>
+
+    <button mat-flat-button color="primary" class="large" routerLink="/coffee">
+      Start Lean coffee
+    </button>
+  </div>
+</div>

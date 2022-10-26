@@ -1,0 +1,28 @@
+<div fxLayout="row wrap" fxLayoutGap="16px">
+  <mat-card
+    fxFlex="30"
+    *ngFor="let item of [1, 1, 1, 1, 1, 1, 1]"
+    class="mat-elevation-z2 margin-bottom"
+  >
+    <mat-card-header routerLink="/board">
+      <mat-card-title>[data]</mat-card-title>
+      <mat-card-subtitle>[lean coffee theme]</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error dolores
+      beatae ipsum deserunt debitis officiis minus quasi culpa cumque unde!
+      Harum, corrupti sit? Officiis quidem numquam ad repellat quasi vitae!
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button
+        mat-icon-button
+        (click)="watch()"
+        matTooltip="Watch dashboard"
+        matTooltipPosition="right"
+      >
+        <mat-icon>bookmark</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

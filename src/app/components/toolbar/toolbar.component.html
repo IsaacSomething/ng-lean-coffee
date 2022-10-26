@@ -1,0 +1,32 @@
+<mat-toolbar>
+  <a routerLink="/" class="margin-right">Lean coffee </a>
+
+  <button
+    mat-flat-button
+    class="margin-left"
+    routerLink="/dashboard"
+    color="primary"
+  >
+    Dashboard
+  </button>
+
+  <span fxFlex="1 1 auto"></span>
+
+  <button mat-icon-button routerLink="/join">
+    <mat-icon color="primary" class="rotate"> sync </mat-icon>
+  </button>
+
+  <button mat-icon-button routerLink="/dashboard">
+    <mat-icon
+      [matBadge]="count$ | ngrxPush"
+      matBadgeColor="primary"
+      matBadgeSize="small"
+    >
+      bookmark
+    </mat-icon>
+  </button>
+
+  <button mat-icon-button routerLink="/profile">
+    <mat-icon> person </mat-icon>
+  </button>
+</mat-toolbar>

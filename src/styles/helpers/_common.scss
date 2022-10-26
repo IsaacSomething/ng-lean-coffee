@@ -6,4 +6,21 @@ body {
 body {
   margin: 0;
   font-family: "Fira Code", monospace;
+  color: #333;
+}
+
+app-root {
+  display: block;
+  height: calc(100vh - 64px);
+  width: 100vw;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }

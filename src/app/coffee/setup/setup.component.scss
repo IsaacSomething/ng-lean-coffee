@@ -1,0 +1,39 @@
+:host {
+  display: block;
+  height: 100%;
+  > div {
+    height: 100%;
+  }
+}
+
+h1 {
+  font-size: 100px;
+  line-height: 100px;
+  border-radius: var(--lc-radius);
+  background-color: var(--lc-smoke);
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button-container {
+  button:first-of-type {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  button:last-of-type {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.code-container {
+  position: relative;
+  user-select: none;
+  small {
+    position: absolute;
+    bottom: 20px;
+    right: 2px;
+    z-index: 10;
+  }
+}

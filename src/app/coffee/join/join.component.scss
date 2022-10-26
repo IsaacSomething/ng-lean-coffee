@@ -1,0 +1,49 @@
+:host {
+  display: block;
+  height: 100%;
+  > div {
+    display: block;
+    height: 100%;
+  }
+}
+
+.top-offset {
+  margin-top: -20px;
+}
+
+.btn-with-right-icon button {
+  &:nth-child(1) {
+    border-right: 0;
+    line-height: 38px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &:nth-child(2) {
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+    margin-left: 0;
+    padding-left: 4px;
+  }
+}
+
+.number-input {
+  height: 76px;
+  width: 50px;
+  border-radius: 4px;
+  margin-bottom: 22px;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 600;
+  font-family: "Fira Code";
+  border: none;
+  background-color: #f3f3f3;
+
+  &::placeholder {
+    font-size: 40px;
+    transform: translateY(6px);
+    opacity: 0.5;
+  }
+}

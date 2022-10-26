@@ -1,0 +1,79 @@
+<div fxLayout="row" fxLayoutGap="16">
+  <div fxFlex="33" class="margin">
+    <h2>To do</h2>
+    <mat-accordion>
+      <div
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="todo"
+        [cdkDropListConnectedTo]="[inProgressList, doneList]"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <ng-container *ngIf="todo.length > 0; else noItems">
+          <app-board-card
+            cdkDrag
+            *ngFor="let item of todo"
+            [card]="item"
+          ></app-board-card>
+        </ng-container>
+
+        <ng-template #noItems>
+          <small>No todo items</small>
+          <p>Items added during a lean coffee</p>
+        </ng-template>
+      </div>
+    </mat-accordion>
+  </div>
+
+  <div fxFlex="33" class="margin">
+    <h2>In Progress</h2>
+    <mat-accordion>
+      <div
+        cdkDropList
+        #inProgressList="cdkDropList"
+        [cdkDropListData]="inProgress"
+        [cdkDropListConnectedTo]="[todoList, doneList]"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <ng-container *ngIf="inProgress.length > 0; else noItems">
+          <app-board-card
+            cdkDrag
+            *ngFor="let item of inProgress"
+            [card]="item"
+          ></app-board-card>
+        </ng-container>
+
+        <ng-template #noItems>
+          <small>No In progress items</small>
+          <p>Good stuff</p>
+        </ng-template>
+      </div>
+    </mat-accordion>
+  </div>
+
+  <div fxFlex="33" class="margin">
+    <h2>Done</h2>
+    <mat-accordion>
+      <div
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="done"
+        [cdkDropListConnectedTo]="[todoList, inProgressList]"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <ng-container *ngIf="done.length > 0; else noItems">
+          <app-board-card
+            cdkDrag
+            *ngFor="let item of done"
+            [card]="item"
+          ></app-board-card>
+        </ng-container>
+
+        <ng-template #noItems>
+          <small>No complete items</small>
+          <p>This could be a good or a bad thing</p>
+        </ng-template>
+      </div>
+    </mat-accordion>
+  </div>
+</div>

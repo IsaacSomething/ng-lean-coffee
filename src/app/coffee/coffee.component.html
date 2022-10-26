@@ -1,0 +1,42 @@
+current state:'Add topics' , 'Discussing', 'Outcome', 'intermission' <br />
+
+The lean coffee owner is the user that persists main states down to everyone
+else listening
+
+<mat-stepper orientation="vertical" #stepper>
+  <mat-step>
+    <ng-template matStepLabel>Start addition of topics</ng-template>
+    <p class="margin-top">
+      The lean coffee has started. Share the code 34534 to participants. Once
+      everyone has joined start to add topics. Participants can then start to
+      add topics that they want to discuss.
+    </p>
+
+    <app-select-time class="margin-bottom"></app-select-time>
+
+    <button mat-flat-button color="primary" matStepperNext>
+      Start Add Topics
+    </button>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Start vote on topics</ng-template>
+
+    <p class="margin-top">
+      Now that topics have been added start to allow the participants to vote on
+      the topics added.
+    </p>
+
+    <app-select-time class="margin-bottom"></app-select-time>
+
+    <button
+      mat-flat-button
+      color="primary"
+      class="margin-right"
+      matStepperPrevious
+    >
+      Back
+    </button>
+    <button mat-flat-button color="primary" matStepperNext>Next</button>
+  </mat-step>
+</mat-stepper>
