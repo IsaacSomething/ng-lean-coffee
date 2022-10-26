@@ -7,7 +7,7 @@ import { ToolbarModule } from './components/toolbar';
 const moduleImports = [ToolbarModule, AppRoutingModule, BrowserAnimationsModule];
 
 import { PushModule } from '@ngrx/component';
-import { modulesConfig } from '@coffee/store/modules.config';
+import { modulesConfig } from '@coffee/store';
 const ngrxImports = [PushModule, ...modulesConfig];
 
 import { MatToolbarModule } from '@angular/material/toolbar';

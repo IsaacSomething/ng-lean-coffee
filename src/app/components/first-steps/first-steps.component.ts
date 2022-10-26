@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { decrement, increment, multiple, AppState } from '@coffee/store/store';
+import { decrement, increment, multiple, RootState } from '@coffee/store/store';
 import { Store } from '@ngrx/store';
 
 @Component({
@@ -11,7 +11,7 @@ export class FirstStepsComponent {
   count$ = this.store.select(state => state.count);
   countIsZero$ = this.store.select(state => state.count === 0);
 
-  constructor(private store: Store<AppState>) {}
+  constructor(private store: Store<RootState>) {}
 
   increment() {
     this.store.dispatch(increment());

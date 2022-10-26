@@ -1,7 +1,7 @@
 import { routerReducer, RouterState } from '@ngrx/router-store';
 import { ActionReducer, ActionReducerMap, createAction, createReducer, MetaReducer, on, props } from '@ngrx/store';
 
-export interface AppState {
+export interface RootState {
   count: number;
   router: RouterState;
 }
@@ -17,7 +17,7 @@ export const countReducer = createReducer(
   on(multiple, (count, { factor }) => count * factor)
 );
 
-export const reducers: ActionReducerMap<AppState> = {
+export const reducers: ActionReducerMap<RootState> = {
   count: countReducer,
   router: routerReducer
 };
@@ -30,4 +30,4 @@ export function logger(reducer: ActionReducer<any>): ActionReducer<any> {
   };
 }
 
-export const debugMetaReducers: MetaReducer<AppState>[] = [logger];
+export const debugMetaReducers: MetaReducer<RootState>[] = [logger];

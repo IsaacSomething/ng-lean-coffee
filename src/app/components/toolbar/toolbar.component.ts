@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState } from '@coffee/store/store';
+import { RootState } from '@coffee/store/store';
 
 @Component({
   selector: 'ls-toolbar',
@@ -11,7 +11,7 @@ import { AppState } from '@coffee/store/store';
 export class ToolbarComponent {
   count$!: Observable<number>;
 
-  constructor(private store: Store<AppState>) {
+  constructor(private store: Store<RootState>) {
     this.count$ = this.store.select(state => state.count);
   }
 }
